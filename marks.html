@@ -1,0 +1,71 @@
+<hmtl>
+    <head>
+        <script>
+            var total_marks=0;
+            function validateRoll(roll){
+                var reg=/^1602-[0-9]{2}-[0-9]{3}-[0-9]{3}$/;
+		        if(!reg.test(roll.value)){
+			        document.getElementById("err1").innerHTML="not a valid roll no";roll.focus();
+		        }
+		        else document.getElementById("err1").innerHTML="";
+            }
+            function validateMarks1(marks){
+                if(parseInt(marks.value)>100 || parseInt(marks.value)<0){document.getElementById("err2").innerHTML="not in the range";marks.focus();}
+                else {document.getElementById("err2").innerHTML="";total_marks+=parseInt(marks.value);}
+            }
+            function validateMarks2(marks){
+                if(parseInt(marks.value)>100 || parseInt(marks.value)<0){document.getElementById("err3").innerHTML="not in the range";marks.focus();}
+                else {document.getElementById("err3").innerHTML="";total_marks+=parseInt(marks.value);};
+            }
+            function validateMarks3(marks){
+                if(parseInt(marks.value)>100 || parseInt(marks.value)<0){document.getElementById("err4").innerHTML="not in the range";marks.focus();}
+                else {document.getElementById("err4").innerHTML="";total_marks+=parseInt(marks.value);};
+            }
+            function validateMarks4(marks){
+                if(parseInt(marks.value)>100 || parseInt(marks.value)<0){document.getElementById("err5").innerHTML="not in the range";marks.focus();}
+                else{ document.getElementById("err5").innerHTML="";total_marks+=parseInt(marks.value);};
+            }
+            function validateTotMarks(totmarks){
+                console.log(total_marks);
+                if(parseInt(totmarks.value)==total_marks){document.getElementById("err6").innerHTML="satisfied";}
+                else {document.getElementById("err6").innerHTML="total marks don't match";marks.focus();}
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+        <table align="center">
+            <tr>
+                <td>ROLL NO</td>
+                <td><input type="text" onblur="validateRoll(this)" required/></td>
+                <td><span id="err1"></span>
+            </tr>
+            <tr>
+                    <td>SUB1
+                    <td><input type="text" onblur="validateMarks1(this)" required/></td>
+                    <td><span id="err2"></span>
+            </tr>
+            <tr>
+                    <td>SUB2
+                    <td><input type="text" onblur="validateMarks2(this)" required/></td>
+                    <td><span id="err3"></span>
+            </tr>
+            <tr>
+                    <td>SUB3
+                     <td><input type="text" onblur="validateMarks3(this)" required/></td>
+                     <td><span id="err4"></span>
+            </tr>
+            <tr>
+                    <td>SUB4
+                    <td><input type="text" onblur="validateMarks4(this)" required/></td>
+                    <td><span id="err5"></span>
+            </tr>
+            <tr>
+                    <td>TOTAL
+                <td><input type="text" onblur="validateTotMarks(this)" required/></td>
+                <td><span id="err6"></span>
+            </tr>
+            <tr><td><input type="submit" value="submit"/></td></tr>
+        </table></form>
+    </body>
+</hmtl>

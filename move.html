@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>JavaScript - Move Object with Arrow Keys using JavaScript Function.</title>
+		<script type="text/javascript">
+			function moveLeft(){
+				var imageObject=document.getElementById("image");	
+				imageObject.style.position="absolute";			
+				imageObject.style.left=parseInt(imageObject.style.left)-15 +'px';
+			console.log(imageObject.style.left);
+			}
+			function moveUp(){
+				var imageObject=document.getElementById("image");	
+				imageObject.style.position="absolute";			
+				imageObject.style.top=parseInt(imageObject.style.top)-15 +'px';
+			}
+			function moveRight(){
+				var imageObject=document.getElementById("image");	
+				imageObject.style.position="absolute";			
+				imageObject.style.left=parseInt(imageObject.style.left)+5 +'px';
+			}
+			function moveDown(){
+				var imageObject=document.getElementById("image");		
+				imageObject.style.position="absolute";		
+				imageObject.style.top=parseInt(imageObject.style.top)+5 +'px';
+			}
+			
+		</script>
+	</head>
+
+	<body>
+		<button onclick="moveUp()">UP</button>
+<button onclick="moveDown()">DOWN</button>
+<button onclick="moveLeft()">LEFT</button>
+<button onclick="moveRight()">RIGHT</button>
+<img id="image" src="images/CSE097.jpg" style="position:'absolute';top:100px;left:450px;" />
+	</body>
+</html>
+
